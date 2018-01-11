@@ -39,6 +39,12 @@ sudo apt-get install -y --no-install-recommends \
 	autokey-gtk \
 	terminator
 
+# network tools
+sudo apt-get install -y --no-install-recommends \
+	network-manager \
+	networkmanager-vpnc \
+	vpnc
+
 # install zsh
 ./install-zsh.sh
 
@@ -64,4 +70,6 @@ sudo gpasswd -a $USER docker
 # setup dropbox
 dropbox start -i
 
-
+# setup awesome
+git clone --recursive https://github.com/lcpz/awesome-copycats.git
+mv -bv awesome-copycats/* ~/.config/awesome; rm -rf awesome-copycats
