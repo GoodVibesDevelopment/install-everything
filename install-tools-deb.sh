@@ -21,6 +21,7 @@ sudo apt-get install -y --no-install-recommends \
 	python-pip \
 	php7.2 \
 	docker.io \
+	docker-compose \
 	zsh \
 	mitmproxy \
 	tmux \
@@ -29,6 +30,9 @@ sudo apt-get install -y --no-install-recommends \
 	rofi \
 	awesome \
 	nautilus-dropbox
+
+# post-install commands
+pip install --upgrade pip
 
 # install jrnl
 pip install jrnl
@@ -40,6 +44,7 @@ pip install jrnl
 git clone https://github.com/GoodVibesDevelopment/dotfiles.git ~/.dotfiles \
 	&& ln -sf ~/.dotfiles/.aliases ~/.bash_aliases \
 	&& ln -sf  ~/.dotfiles/.gitconfig ~/.gitconfig
+source ~/.bashrc
 
 # setup zsh
 chsh -s /bin/zsh                                              # set zsh as default shell
