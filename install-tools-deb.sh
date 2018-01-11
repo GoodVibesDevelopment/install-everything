@@ -4,6 +4,7 @@
 curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
 sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
 sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
+sudo add-apt-repository ppa:klaus-vormweg/awesome
 
 # add repos
 echo "Add repositories."
@@ -74,3 +75,4 @@ dropbox start -i
 git clone --recursive https://github.com/lcpz/awesome-copycats.git
 mkdir -p ~/.config/awesome
 mv -bvf awesome-copycats/* ~/.config/awesome; rm -rf awesome-copycats
+mv ~/.config/awesome/rc.lua.template ~/.config/awesome/rc.lua
