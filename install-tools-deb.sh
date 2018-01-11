@@ -3,7 +3,6 @@
 # add repos
 echo "Add repositories."
 sudo add-apt-repository ppa:ondrej/php
-sudo add-apt-repository -y ppa:webupd8team/sublime-text-3
 sudo add-apt-repository ppa:nathan-renniewaldock/flux
 
 # update system
@@ -22,7 +21,6 @@ sudo apt-get install -y --no-install-recommends \
 	php7.2 \
 	docker.io \
 	docker-compose \
-	zsh \
 	mitmproxy \
 	tmux \
 	tmuxinator \
@@ -31,8 +29,12 @@ sudo apt-get install -y --no-install-recommends \
 	awesome \
 	nautilus-dropbox
 
+# install zsh
+./install-zsh.sh
+
 # post-install commands
-pip install --upgrade pip
+sudo pip install --upgrade pip
+sudo pip install setuptools
 
 # install jrnl
 pip install jrnl
