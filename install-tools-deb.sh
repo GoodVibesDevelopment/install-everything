@@ -10,6 +10,7 @@ echo "Add repositories."
 sudo add-apt-repository ppa:ondrej/php
 sudo add-apt-repository ppa:nathan-renniewaldock/flux
 sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
+sudo add-apt-repository ppa:troxor/autokey
 
 # update system
 echo "System update"
@@ -34,7 +35,8 @@ sudo apt-get install -y --no-install-recommends \
 	rofi \
 	awesome \
 	nautilus-dropbox \
-	code
+	code \
+	autokey-gtk
 
 # install zsh
 ./install-zsh.sh
@@ -55,10 +57,8 @@ git clone https://github.com/GoodVibesDevelopment/dotfiles.git ~/.dotfiles \
 	&& ln -sf  ~/.dotfiles/.gitconfig ~/.gitconfig
 source ~/.bashrc
 
-# setup zsh
-chsh -s /bin/zsh                                              # set zsh as default shell
-wget --no-check-certificate http://install.ohmyz.sh -O - | sh # setup oh myzsh
-
+# setup docker
+sudo gpasswd -a $USER docker
 
 # setup dropbox
 dropbox start -i
