@@ -1,9 +1,15 @@
 #!/bin/bash
 
+# pre-requirements
+curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
+sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
+
 # add repos
 echo "Add repositories."
 sudo add-apt-repository ppa:ondrej/php
 sudo add-apt-repository ppa:nathan-renniewaldock/flux
+sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
 
 # update system
 echo "System update"
@@ -27,7 +33,8 @@ sudo apt-get install -y --no-install-recommends \
 	fluxgui \
 	rofi \
 	awesome \
-	nautilus-dropbox
+	nautilus-dropbox \
+	code
 
 # install zsh
 ./install-zsh.sh
