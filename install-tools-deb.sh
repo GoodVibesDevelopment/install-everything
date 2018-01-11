@@ -72,4 +72,5 @@ dropbox start -i
 
 # setup awesome
 git clone --recursive https://github.com/lcpz/awesome-copycats.git
-mv -bv awesome-copycats/* ~/.config/awesome; rm -rf awesome-copycats
+mkdir -p ~/.config/awesome
+mv -bvf awesome-copycats/* ~/.config/awesome; rm -rf awesome-copycats
