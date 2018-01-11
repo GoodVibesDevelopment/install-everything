@@ -36,7 +36,8 @@ sudo apt-get install -y --no-install-recommends \
 	awesome \
 	nautilus-dropbox \
 	code \
-	autokey-gtk
+	autokey-gtk \
+	terminator
 
 # install zsh
 ./install-zsh.sh
