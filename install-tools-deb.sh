@@ -15,7 +15,10 @@ sudo apt-get dist-upgrade -y
 echo "Install tools"
 sudo apt-get install -y --no-install-recommends \
 	google-chrome-stable \
-	git npm composer \
+	git-core \
+	npm \
+	composer \
+	python-pip \
 	php7.2 \
 	docker.io \
 	zsh \
@@ -24,7 +27,11 @@ sudo apt-get install -y --no-install-recommends \
 	tmuxinator \
 	fluxgui \
 	rofi \
-	awesome
+	awesome \
+	nautilus-dropbox
+
+# install jrnl
+pip install jrnl
 
 # jetbrains toolbox
 ./install-jetbrains-toolbox-app.sh
@@ -34,6 +41,12 @@ git clone https://github.com/GoodVibesDevelopment/dotfiles.git ~/.dotfiles \
 	&& ln -sf ~/.dotfiles/.aliases ~/.bash_aliases \
 	&& ln -sf  ~/.dotfiles/.gitconfig ~/.gitconfig
 
+# setup zsh
+chsh -s /bin/zsh                                              # set zsh as default shell
+wget --no-check-certificate http://install.ohmyz.sh -O - | sh # setup oh myzsh
 
+
+# setup dropbox
+dropbox start -i
 
 
