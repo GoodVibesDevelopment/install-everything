@@ -1,4 +1,4 @@
-#!/bin/bash
+ #!/bin/bash
 
 # pre-requirements
 curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
@@ -49,7 +49,8 @@ sudo apt-get install -y --no-install-recommends \
 	vpnc \
 	network-manager \
 	networkmanager-vpnc \
-	networkmanager-vpnc-gnome
+	networkmanager-vpnc-gnome \
+	remmina
 
 # install zsh
 ./install-zsh.sh
