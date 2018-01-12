@@ -40,6 +40,10 @@ sudo apt-get install -y --no-install-recommends \
 	autokey-gtk \
 	terminator
 
+# install node
+curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
 # network tools
 sudo apt-get install -y --no-install-recommends \
 	vpnc \
@@ -82,3 +86,11 @@ git clone --recursive https://github.com/lcpz/awesome-copycats.git
 mkdir -p ~/.config/awesome
 mv -bvf awesome-copycats/* ~/.config/awesome; rm -rf awesome-copycats
 mv ~/.config/awesome/rc.lua.template ~/.config/awesome/rc.lua
+
+# setup tmux
+ln -s $(pwd)/.tmux.conf $HOME/.tmux.conf
+
+# snippets
+curl https://raw.githubusercontent.com/alexanderepstein/Bash-Snippets/master/ytview/ytview > ytview
+chmod +x ytview
+sudo mv ytview /usr/bin/ytview
