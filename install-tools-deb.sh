@@ -42,9 +42,10 @@ sudo apt-get install -y --no-install-recommends \
 
 # network tools
 sudo apt-get install -y --no-install-recommends \
+	vpnc \
 	network-manager \
 	networkmanager-vpnc \
-	vpnc
+	networkmanager-vpnc-gnome
 
 # install zsh
 ./install-zsh.sh
