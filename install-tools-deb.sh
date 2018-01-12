@@ -56,6 +56,11 @@ sudo pip install setuptools
 # install jrnl
 pip install jrnl
 
+# install slack
+curl https://downloads.slack-edge.com/linux_releases/slack-desktop-3.0.2-amd64.deb > slack.deb
+dpkg -i slack.deb
+rm slack.deb
+
 # jetbrains toolbox
 ./install-jetbrains-toolbox-app.sh
 
