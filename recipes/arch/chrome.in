@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+echo "In chrome"
+command -v yaourt || yaourt.in
+yaourt -S google-chrome
